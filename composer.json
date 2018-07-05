@@ -1,0 +1,25 @@
+{
+    "name": "arjennz/montapacking",
+    "description": "Montapacking API client library for PHP. Montapacking is an ecommerce fullfillment specialist based in the Netherlands.",
+    "keywords": ["makkelijkemoestuin", "montapacking", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arjen Medema",
+            "email": "arjenmedema@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArjenNZ\\Montapacking\\": "src/"
+        }
+    }
+}
