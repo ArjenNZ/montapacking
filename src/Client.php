@@ -288,14 +288,19 @@ class Client
         $client = new \GuzzleHttp\Client();
  
         $url = $this->getUrl($endpoint);
- 
-        $response = $client->request($method, $url, [
-            'auth' => [
-                $this->username,
-                $this->password
-            ],
-            'json' => $params
-        ]);
+        
+        try {
+            $response = $client->request($method, $url, [
+                'auth' => [
+                    $this->username,
+                    $this->password
+                ],
+                'json' => $params
+            ]);
+        } catch (\Exception $e) {
+            $response = $e->getResponse();
+        }
+        
  
         $data = json_decode($response->getBody()->getContents());
  
