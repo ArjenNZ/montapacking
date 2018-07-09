@@ -289,17 +289,14 @@ class Client
  
         $url = $this->getUrl($endpoint);
         
-        try {
-            $response = $client->request($method, $url, [
-                'auth' => [
-                    $this->username,
-                    $this->password
-                ],
-                'json' => $params
-            ]);
-        } catch (\Exception $e) {
-            $response = $e->getResponse();
-        }
+        
+        $response = $client->request($method, $url, [
+            'auth' => [
+                $this->username,
+                $this->password
+            ],
+            'json' => $params
+        ]);
         
  
         $data = json_decode($response->getBody()->getContents());
