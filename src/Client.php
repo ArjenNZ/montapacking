@@ -117,9 +117,9 @@ class Client
         return $this->sendRequest('/order/' . $orderid, $params, self::METHOD_PUT);
     }
  
-    public function deleteOrder($orderid)
+    public function deleteOrder($orderid, $params)
     {
-        return $this->sendRequest('/order/' . $orderid, [], self::METHOD_DELETE);
+        return $this->sendRequest('/order/' . $orderid, $params, self::METHOD_DELETE);
     }
  
     public function forgetOrder($orderid, $params)
